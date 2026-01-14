@@ -16,9 +16,47 @@ Moov is a macOS menu bar application that helps you maintain healthy movement ha
 
 ---
 
+## Implementation Status
+
+This guide documents both **implemented** and **planned** features. Look for these indicators:
+
+- ✅ **Fully Implemented** - Feature is working and tested
+- 🚧 **Partial/In Progress** - Core functionality exists but incomplete
+- ⚠️ **Known Limitation** - Documented feature with gaps or bugs
+- ❌ **Planned** - Not yet implemented, documented for future versions
+
+### Quick Summary: What Works Now (v1.0.0)
+
+**✅ Working:**
+- Break timer with customizable intervals
+- Full-screen break overlay with 30-second countdown
+- Snooze options (5/10 minutes) via keyboard (`1`, `2`) or mouse
+- Quick escape with `Esc` key
+- Menu bar controls (pause, resume, presentation mode)
+- Settings window (break interval, quiet hours, activity toggle, sound)
+- Basic statistics (today's breaks, compliance rate)
+- SwiftData persistence
+
+**⚠️ Known Limitations:**
+- "I Moved!" button requires mouse click (Enter key shortcut not yet implemented)
+- Cmd+Tab implicit snooze not wired up (use `Esc` instead)
+- Only one hardcoded activity suggestion (no rotation yet)
+- Micro-breaks have data models but no UI/timer
+
+**❌ Coming Soon:**
+- Enhanced keyboard shortcuts (Enter key)
+- Multiple rotating activity suggestions
+- Advanced statistics with charts
+- Idle detection
+- Calendar integration
+
+---
+
 ## Core Features
 
-### 1. Break Reminders
+### 1. Break Reminders ✅
+
+**Status: FULLY IMPLEMENTED**
 
 **How It Works:**
 - Timer runs in the background tracking time since your last break
@@ -36,7 +74,9 @@ Moov is a macOS menu bar application that helps you maintain healthy movement ha
 - Clean, minimal interface with large, easy-to-read text
 - Walking figure icon to reinforce movement
 
-### 2. The Break Overlay
+### 2. The Break Overlay ✅
+
+**Status: FULLY IMPLEMENTED** (with some keyboard shortcut limitations noted below)
 
 When a break is triggered, you'll see:
 
@@ -54,7 +94,7 @@ When a break is triggered, you'll see:
    - Once active: Dismisses the overlay
    - Resets the break timer
    - Logs the break as "taken" in statistics
-   - Keyboard: `Enter` (only works after countdown)
+   - ⚠️ **Note:** Currently requires mouse click (keyboard shortcut not yet implemented)
 
 2. **"Snooze" Dropdown**
    - Click to reveal snooze options
@@ -68,29 +108,30 @@ When a break is triggered, you'll see:
    - Fastest way to dismiss if you're in the middle of something
 
 **Special Behavior:**
-- You can `Cmd+Tab` away to another app if urgent
-- Switching away treats it as an implicit 5-minute snooze
 - Non-blocking - won't lock you out
+- ⚠️ **Note:** Cmd+Tab implicit snooze is planned but not yet functional - use Esc key instead
 
-### 3. Activity Suggestions
+### 3. Activity Suggestions 🚧
+
+**Status: PARTIALLY IMPLEMENTED** (toggle works, but only one hardcoded suggestion)
 
 **What They Are:**
 - Simple, quick exercises you can do at your desk
 - Designed for 30 seconds to 2 minutes
 - No equipment needed
 
-**Current Suggestions Include:**
-- Stand up and stretch
-- Shoulder rolls (5 times)
-- Arms above head stretch
-- Deep breathing (3 breaths)
+**Current Suggestions:**
+- Stand up and stretch with shoulder rolls, arm stretches, and deep breathing
+- ⚠️ **Note:** Currently shows one hardcoded suggestion - variety coming in future versions
 
 **Toggle On/Off:**
 - Settings → Activities tab
 - Uncheck "Show activity suggestions" to disable
 - Overlay will still appear, just without the suggestion card
 
-### 4. Menu Bar Interface
+### 4. Menu Bar Interface ✅
+
+**Status: FULLY IMPLEMENTED**
 
 **Accessing Moov:**
 - Click the walking figure icon in your menu bar
@@ -132,7 +173,9 @@ When a break is triggered, you'll see:
 
 - **Quit Moov** - Exit the application
 
-### 5. Settings Window
+### 5. Settings Window ✅
+
+**Status: FULLY IMPLEMENTED**
 
 Comprehensive preferences organized with sidebar navigation.
 
@@ -199,7 +242,9 @@ Comprehensive preferences organized with sidebar navigation.
 - Brief description
 - Credits
 
-### 6. Statistics Dashboard
+### 6. Statistics Dashboard 🚧
+
+**Status: BASIC VERSION IMPLEMENTED** (today's stats and compliance rate work; charts/trends planned)
 
 Track your break-taking habits over time.
 
@@ -219,11 +264,12 @@ Track your break-taking habits over time.
 - "Take some breaks to see your statistics here"
 - Chart icon illustration
 
-**Future Enhancements (Not Yet Implemented):**
+**Future Enhancements (❌ Not Yet Implemented):**
 - Weekly charts
 - Streak tracking
 - Break patterns by time of day
 - CSV export for data nerds
+- Historical trend analysis
 
 ---
 
@@ -231,27 +277,26 @@ Track your break-taking habits over time.
 
 ### During a Break Overlay
 
-| Key | Action |
-|-----|--------|
-| `Enter` | Dismiss ("I Moved!") - only after 30s countdown |
-| `1` | Snooze for 5 minutes |
-| `2` | Snooze for 10 minutes |
-| `Esc` | Quick snooze (5 minutes) - escape hatch |
-| `Cmd+Tab` | Switch apps (treats as 5 min snooze) |
+| Key | Action | Status |
+|-----|--------|--------|
+| `1` | Snooze for 5 minutes | ✅ Working |
+| `2` | Snooze for 10 minutes | ✅ Working |
+| `Esc` | Quick snooze (5 minutes) - escape hatch | ✅ Working |
 
-**Note:** The "I Moved!" button and Enter key are disabled for the first 30 seconds to encourage actually taking a break.
+**Note:** The "I Moved!" button is disabled for the first 30 seconds to encourage actually taking a break. Currently requires mouse click to activate.
 
 **Why Keyboard Shortcuts Matter:**
-- Faster than reaching for mouse
+- Faster than reaching for mouse (for snooze actions)
 - Keep hands on keyboard while working
 - Muscle memory develops quickly
 - Accessibility-friendly
 
 ### Global Shortcuts
 
-Currently none, but planned:
-- `Cmd+Shift+B` - Trigger break manually (future)
-- Custom hotkey configuration (future)
+⚠️ **Not Yet Implemented - Planned for future versions:**
+- `Enter` key to dismiss "I Moved!" button
+- `Cmd+Shift+B` - Trigger break manually
+- Custom hotkey configuration
 
 ---
 
@@ -300,7 +345,7 @@ Currently none, but planned:
 ### "Taken" vs "Snoozed" vs "Dismissed"
 
 **Taken (Good ✅):**
-- You clicked "I Moved!" or pressed Space/Enter
+- You clicked "I Moved!" button (after 30s countdown)
 - Indicates you actually took a break
 - Best for your health
 - Contributes to compliance rate
@@ -311,10 +356,10 @@ Currently none, but planned:
 - Useful when you're mid-task
 - Not counted as "taken" in stats
 
-**Dismissed (Not Ideal ❌):**
-- Currently treats same as snooze (5 min)
-- Occurs when you Cmd+Tab away
-- Not explicitly logged separately (yet)
+**Dismissed (Quick Escape):**
+- Press `Esc` key to quickly snooze for 5 minutes
+- Useful when you're mid-task and can't break immediately
+- Logged as "dismissed" in statistics
 
 ---
 
@@ -369,31 +414,31 @@ Currently none, but planned:
 
 ## What Moov Doesn't Do (Yet)
 
-### Current Limitations
+### Known Limitations & Missing Features
 
-**No Automatic Idle Detection:**
+**❌ No Automatic Idle Detection:**
 - Won't detect if you're away from computer
 - Future feature: Reset timer if idle > 5 minutes
 - Workaround: Use "Take Break Now" when you return
 
-**No Calendar Integration:**
+**❌ No Calendar Integration:**
 - Doesn't know about your meetings
 - Won't auto-enable presentation mode
 - Workaround: Manual presentation mode toggle
 
-**No DND/Focus Mode Detection:**
+**❌ No DND/Focus Mode Detection:**
 - Doesn't respect macOS Focus modes automatically
 - Workaround: Use Pause or Presentation Mode
 
-**Statistics are Basic:**
+**🚧 Statistics are Basic:**
 - No charts/graphs yet
 - No streak tracking
 - No CSV export
 - Coming in future versions
 
-**Single Break Type:**
-- Only one timer/interval
-- No micro-breaks (planned feature)
+**🚧 Single Break Type:**
+- Only one timer/interval currently active
+- Micro-breaks are partially implemented (data models ready) but not yet functional in UI
 - Workaround: Manually trigger breaks as needed
 
 ---
@@ -505,30 +550,35 @@ Currently none, but planned:
 
 ## Future Feature Wishlist
 
+**❌ ALL FEATURES BELOW ARE PLANNED BUT NOT YET IMPLEMENTED**
+
 Features planned for future versions:
 
-### V2 - Smart Features
+### V2 - Smart Features (❌ Not Implemented)
 - ⏳ Idle detection (reset timer when you're away)
-- 🎯 More activity suggestions with categories
-- 📊 Enhanced statistics with charts
+- 🎯 More activity suggestions with categories and rotation
+- 📊 Enhanced statistics with charts and graphs
 - 🔥 Streak tracking and gamification
 - 📈 Compliance trends over time
+- ⌨️ Enter key shortcut for "I Moved!" button
+- 🖱️ Cmd+Tab implicit snooze handling
 
-### V3 - Integration
+### V3 - Integration (❌ Not Implemented)
 - 📅 Calendar integration (auto-pause during meetings)
 - 🍎 Apple Health integration (log standing time)
 - ⌚ Apple Watch app (trigger breaks from watch)
 - ☁️ iCloud sync (cross-device stats)
 
-### V4 - Customization
+### V4 - Customization (❌ Not Implemented)
 - 🎨 Custom themes and colors
 - 🏃 Custom activity editor
 - ⏱️ Pomodoro mode (25/5 cycles)
+- 🔄 Micro-breaks functionality (models exist, UI/timer needed)
 - 🎵 Custom sounds
 - ⌨️ Global keyboard shortcuts
 - 🖼️ Custom app icon
 
-### V5 - Intelligence
+### V5 - Intelligence (❌ Not Implemented)
 - 🤖 ML-based optimal break times
 - 📊 Pattern recognition
 - 💡 Smart suggestions based on usage

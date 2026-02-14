@@ -1,0 +1,8 @@
+build/
+DerivedData/
+*.dmg
+*.app
+*.zip
+*.xcarchive
+*.xcuserstate
+**/xcuserdata/

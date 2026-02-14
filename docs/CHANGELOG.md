@@ -6,6 +6,28 @@ A chronological record of development progress, issues encountered, and solution
 
 ## Development Timeline
 
+### Issue #7: DMG Missing Applications Shortcut
+
+**Date**: February 2026  
+**Severity**: Medium - Distribution UX issue
+
+**Problem:**
+- Generated DMG contained only `Moov.app`
+- Users did not see the standard drag-to-Applications install flow
+
+**Root Cause:**
+- DMG was created directly from app folder instead of a staging directory
+- `/Applications` symlink was not included
+
+**Solution:**
+- Added `scripts/release-dmg.sh` helper
+- Script now stages:
+  - `Moov.app`
+  - `Applications` symlink (`ln -s /Applications`)
+- DMG is always built from staged folder to prevent regressions
+
+---
+
 ### Phase 1: Planning (Pre-Implementation)
 
 **Initial Approach Issues:**

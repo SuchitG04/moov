@@ -5,4 +5,4 @@ DerivedData/
 *.zip
 *.xcarchive
 *.xcuserstate
-*.xcuserdata/
+xcuserdata/

@@ -116,6 +116,27 @@ Since you don't have Xcode installed yet (or it's not configured), here's how to
 - Check the console output in Xcode for error messages
 - Common issue: Model context not set up - make sure SwiftData is properly linked
 
+## Build DMG for GitHub Releases
+
+Use the helper script to avoid missing the `Applications` shortcut in the DMG:
+
+```bash
+./scripts/release-dmg.sh
+```
+
+This script:
+- builds `Moov.app` in Release mode
+- stages both `Moov.app` and `/Applications` symlink
+- creates `Moov.dmg` in the repo root
+
+Optional custom DMG filename:
+
+```bash
+./scripts/release-dmg.sh "Moov-v1.0.2"
+```
+
+This creates `Moov-v1.0.2.dmg`.
+
 ## Features
 
 - ✅ Menu bar app (no dock icon)

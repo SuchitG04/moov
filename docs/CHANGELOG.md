@@ -6,6 +6,28 @@ A chronological record of development progress, issues encountered, and solution
 
 ## Development Timeline
 
+### Issue #8: README Too Setup-Heavy
+
+**Date**: February 2026  
+**Severity**: Low - Documentation organization
+
+**Problem:**
+- `README.md` mixed product usage content with long setup/build instructions
+
+**Root Cause:**
+- Setup notes accumulated in README over time
+- Core usage information was harder to scan
+
+**Solution:**
+- Moved setup/build/troubleshooting instructions to `docs/SETUP.md`
+- Simplified `README.md` to focus on:
+  - overview
+  - usage
+  - future enhancements
+  - links to detailed docs
+
+---
+
 ### Issue #7: DMG Missing Applications Shortcut
 
 **Date**: February 2026  

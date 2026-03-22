@@ -1,0 +1,21 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="28" fill="#EEE7DD"/>
+  <rect x="120" y="90" width="1360" height="720" rx="28" fill="#FCFAF5" stroke="#D8CCBA" stroke-width="4"/>
+  <rect x="120" y="90" width="280" height="720" rx="28" fill="#223A35"/>
+  <rect x="160" y="150" width="180" height="26" rx="10" fill="#FFFFFF" fill-opacity="0.85"/>
+  <rect x="160" y="220" width="200" height="54" rx="16" fill="#F0A15B"/>
+  <rect x="160" y="300" width="180" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.35"/>
+  <rect x="160" y="346" width="180" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.25"/>
+  <rect x="160" y="392" width="180" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.25"/>
+  <rect x="460" y="150" width="340" height="30" rx="10" fill="#223A35"/>
+  <rect x="460" y="220" width="540" height="22" rx="11" fill="#536B64" fill-opacity="0.34"/>
+  <rect x="460" y="290" width="700" height="120" rx="22" fill="#F3ECE2"/>
+  <rect x="460" y="450" width="700" height="120" rx="22" fill="#E6EFE8"/>
+  <rect x="460" y="610" width="480" height="20" rx="10" fill="#536B64" fill-opacity="0.24"/>
+  <rect x="1200" y="220" width="180" height="96" rx="22" fill="#FFF1E2"/>
+  <rect x="1200" y="346" width="180" height="96" rx="22" fill="#EEF4F8"/>
+  <rect x="1200" y="472" width="180" height="96" rx="22" fill="#F2EBE7"/>
+  <text x="800" y="860" text-anchor="middle" fill="#223A35" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    Replace with settings screenshot
+  </text>
+</svg>

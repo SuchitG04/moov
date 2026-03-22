@@ -1,0 +1,15 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#1A1A1A"/>
+  <rect width="1600" height="900" fill="#000000" fill-opacity="0.45"/>
+  <rect x="400" y="120" width="800" height="660" rx="36" fill="#F7F4EE"/>
+  <rect x="690" y="190" width="220" height="220" rx="110" fill="#DDE9E1"/>
+  <rect x="580" y="460" width="440" height="44" rx="14" fill="#203B35"/>
+  <rect x="530" y="534" width="540" height="20" rx="10" fill="#4F6D65" fill-opacity="0.4"/>
+  <rect x="570" y="572" width="460" height="20" rx="10" fill="#4F6D65" fill-opacity="0.25"/>
+  <rect x="540" y="628" width="520" height="72" rx="22" fill="#DCE9DF"/>
+  <rect x="560" y="732" width="240" height="16" rx="8" fill="#203B35" fill-opacity="0.18"/>
+  <rect x="820" y="720" width="240" height="44" rx="14" fill="#F0A15B"/>
+  <text x="800" y="862" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">
+    Replace with break overlay screenshot
+  </text>
+</svg>

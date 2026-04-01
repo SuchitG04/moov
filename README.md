@@ -13,6 +13,14 @@
   <!--<img src="./docs/screenshots/menu-stats.png" alt="Moov overview screenshot placeholder" width="900" />-->
 <!--</p>-->
 
+## Installation
+
+1. Go to the project's **Releases** page on GitHub.
+2. Download the latest `Moov.dmg` from the release assets.
+3. Open the DMG and drag `Moov.app` into your `Applications` folder.
+4. Open `Applications` and launch `Moov`.
+5. If macOS shows a security warning the first time you open it, right-click `Moov` in `Applications`, choose `Open`, and confirm.
+
 ## Why Moov
 
 Moov lives in your menu bar and keeps movement reminders simple:
